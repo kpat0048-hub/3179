@@ -1,0 +1,17 @@
+state,metric,count,state_full
+NSW,Venues,456,New South Wales
+NSW,Festivals,18,New South Wales
+VIC,Venues,398,Victoria
+VIC,Festivals,22,Victoria
+QLD,Venues,267,Queensland
+QLD,Festivals,14,Queensland
+WA,Venues,156,Western Australia
+WA,Festivals,9,Western Australia
+SA,Venues,98,South Australia
+SA,Festivals,8,South Australia
+TAS,Venues,34,Tasmania
+TAS,Festivals,5,Tasmania
+ACT,Venues,28,Australian Capital Territory
+ACT,Festivals,4,Australian Capital Territory
+NT,Venues,12,Northern Territory
+NT,Festivals,2,Northern Territory

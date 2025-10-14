@@ -1,0 +1,36 @@
+state,genre,percentage
+NSW,Pop,32
+NSW,Rock,18
+NSW,Hip Hop,15
+NSW,Electronic,12
+NSW,Indie/Alt,10
+NSW,Country,8
+NSW,R&B,5
+VIC,Pop,28
+VIC,Rock,20
+VIC,Electronic,15
+VIC,Indie/Alt,14
+VIC,Hip Hop,12
+VIC,Country,6
+VIC,R&B,5
+QLD,Pop,25
+QLD,Rock,22
+QLD,Country,18
+QLD,Indie/Alt,12
+QLD,Hip Hop,10
+QLD,Electronic,8
+QLD,R&B,5
+WA,Pop,30
+WA,Rock,19
+WA,Hip Hop,13
+WA,Indie/Alt,12
+WA,Electronic,11
+WA,Country,10
+WA,R&B,5
+SA,Pop,27
+SA,Rock,21
+SA,Indie/Alt,14
+SA,Country,12
+SA,Hip Hop,11
+SA,Electronic,10
+SA,R&B,5
