@@ -224,7 +224,7 @@
                 {
                 "lookup": "properties.name",
                 "from": {
-                    "data": {"url": "data/revenue-per-capita.csv"},
+                    "data": {"url": "revenue-per-capita.csv"},
                     "key": "state_name",
                     "fields": ["revenue_per_capita"]
                 }
@@ -283,7 +283,7 @@
                 "fontSize": 16,
                 "subtitle": "NSW and VIC dominate total revenue"
               },
-              "data": { "url": "data/music_revenue_by_state.csv" },
+              "data": { "url": "music_revenue_by_state.csv" },
               "transform": [
                 {"filter": "datum.per_capita_revenue >= revenue_filter"}
               ],
@@ -343,7 +343,7 @@
                 "fontSize": 16,
                 "subtitle": "Victoria leads in revenue per person"
               },
-              "data": { "url": "data/per_capita_revenue_vs_festivals.csv" },
+              "data": { "url": "per_capita_revenue_vs_festivals.csv" },
               "transform": [
                 {"filter": "datum.per_capita_revenue >= revenue_filter"}
               ],
@@ -442,7 +442,7 @@
             "width": 300,
             "height": 400,
             "data": {
-                "url": "data/genre_preferences.csv"
+                "url": "genre_preferences.csv"
             },
             "mark": "bar",
             "encoding": {
@@ -477,7 +477,7 @@
             "width": 300,
             "height": 400,
             "data": {
-                "url": "data/australian_artists.csv"
+                "url": "australian_artists.csv"
             },
             "mark": {"type": "bar", "cornerRadiusEnd": 4},
             "encoding": {
@@ -515,7 +515,7 @@
             "width": 500,
             "height": 400,
             "data": {
-                "url": "data/music_revenue_by_state.csv"
+                "url": "music_revenue_by_state.csv"
             },
             "mark": {"type": "bar", "cornerRadiusEnd": 4},
             "encoding": {
@@ -555,4 +555,5 @@
         vegaEmbed("#vis7", spec7).catch(console.error);
     </script>
 </body>
+
 </html>
