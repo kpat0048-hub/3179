@@ -8,16 +8,251 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
     <title>Australian Music Festival Landscape</title>
-   
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        h1 {
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 42px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        .narrative {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            color: #333;
+        }
+        .narrative.full-width {
+            margin-bottom: 30px;
+        }
+        .narrative h2 {
+            color: #1a1a1a;
+            margin-top: 0;
+            font-size: 28px;
+        }
+        .narrative p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .narrative .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .narrative .quote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #007bff;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        .vis-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .vis-container.full-width {
+            margin-bottom: 30px;
+        }
+        .vis-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .horizontal-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .horizontal-section.text-vis {
+            grid-template-columns: 1fr 1.5fr;
+            align-items: center;
+        }
+        .horizontal-section.vis-text {
+            grid-template-columns: 1.5fr 1fr;
+            align-items: center;
+        }
+        @media (max-width: 968px) {
+            .horizontal-section,
+            .horizontal-section.text-vis,
+            .horizontal-section.vis-text {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Australian Music Festival Landscape (Week 10 Homework Task)</h1>
-    <div id="vis1"></div>
+    <h1>🎵 Festivals of Australia 🎵</h1>
+    <p class="subtitle">A Journey Through the Nation's Music Festival Culture</p>
+    
+    <div class="narrative full-width">
+        <h2></h2>
+        <p>Australia's music festival scene is <span class="highlight">more than just entertainment</span>—it's actually a huge money-maker for the country.</p>
+        <p>Every year, hundreds of thousands of Aussies pack their bags and travel to festivals all over the country. You've got everything from thumping EDM beats to screaming rock guitars to smooth R&B vibes. Whatever you're into, there's a festival for you.</p>
+        <p class="quote">"Music festivals are the heartbeat of Australian culture, where strangers become friends and memories are made under the stars."</p>
+    </div>
+
+    <div class="horizontal-section text-vis">
+        <div class="narrative">
+            <h2>The Geographic Melody</h2>
+            <p>Here's something interesting: music money doesn't spread evenly across Australia. <span class="highlight">The Northern Territory leads in per capita revenue</span>, but the big states like Victoria and NSW bring in the most cash overall because they've got way more people.</p>
+            <p>This map shows how location, population size, and music venues all come together to create Australia's unique music scene. Each state adds its own flavor to the mix.</p>
+        </div>
+        <div class="vis-container">
+            <div class="vis-title">Live Performance Revenue Per Capita by State</div>
+            <div id="visMap"></div>
+        </div>
+    </div>
+
+    <div class="horizontal-section text-vis">
+        <div class="narrative">
+            <h2>The Festival Landscape</h2>
+            <p><span class="highlight">Victoria and New South Wales lead the charge</span> when it comes to hosting festivals. But here's the cool part—these events don't just sell tickets. They boost local hotels, restaurants, and shops too.</p>
+            <p>States that have more festivals and better venues tend to make more money per person from music. It's all connected.</p>
+        </div>
+        <div class="vis-container">
+            <div class="vis-title">Festival Distribution & Revenue Impact</div>
+            <div id="vis1"></div>
+        </div>
+    </div>
+
+    <div class="horizontal-section vis-text">
+        <div class="vis-container">
+            <div class="vis-title">Music Infrastructure by State</div>
+            <div id="vis2"></div>
+        </div>
+        <div class="narrative">
+            <h2>Building the Stage</h2>
+            <p>Every great festival needs the right setup—venues, stages, sound systems, the works.</p>
+            <p><span class="highlight">States that invest in music infrastructure reap the rewards</span> in both awesome concerts and cold hard cash. The numbers prove it: more venues equals better festivals.</p>
+        </div>
+    </div>
+
+    <div class="narrative full-width">
+        <h2>A Decade of Growth: The Festival Boom</h2>
+        <p>Since 2014, Australia's festival scene has absolutely exploded. What used to be just a few big events is now basically a year-round party. <span class="highlight">The festival boom isn't slowing down</span>—if anything, it's getting bigger and better every year.</p>
+    </div>
+
+    <div class="horizontal-section">
+        <div class="vis-container">
+            <div class="vis-title">Genre Preferences by State</div>
+            <div id="vis4"></div>
+        </div>
+        <div class="vis-container">
+            <div class="vis-title">Australian Artists: Monthly Listeners</div>
+            <div id="vis5"></div>
+        </div>
+    </div>
+
+
+    <div class="narrative full-width">
+        <h2>The Final Encore: A Bright Future</h2>
+        <p>Looking ahead, one thing's crystal clear: <span class="highlight">Australia's music festival culture is here to stay</span>. The data tells us this scene is thriving and constantly evolving.</p>
+        <p>From the festivals that bring thousands together, to the venues that host them, to the artists who blow our minds, to the local businesses that benefit—music is just part of what makes Australia, Australia.</p>
+        <p class="quote">"In the end, it's not just about the music—it's about the moments, the memories, and the magic that happens when thousands of people come together to celebrate the universal language of sound."</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Music Festivals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">States & Territories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Music Genres</div>
+            </div>
+        </div>
+    </div>
 
     <script>
-    var spec1 = {
+        var specMap = {
+             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 800,
+            "height": 500,
+            "projection": {
+                "type": "mercator"
+            },
+            "data": {
+                "url": "data/australia-states.topojson",
+                "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
+            },
+            "transform": [
+                {
+                "lookup": "properties.name",
+                "from": {
+                    "data": {"url": "data/revenue-per-capita.csv"},
+                    "key": "state_name",
+                    "fields": ["revenue_per_capita"]
+                }
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "stroke": "white",
+                "strokeWidth": 1
+            },
+            "encoding": {
+                "color": {
+                "field": "revenue_per_capita",
+                "type": "quantitative",
+                "scale": {"scheme": "blues"},
+                "legend": {"title": "Revenue per Capita ($AUD)"}
+                },
+                "tooltip": [
+                {"field": "properties.name", "type": "nominal", "title": "State"},
+                {"field": "revenue_per_capita", "type": "quantitative", "format": "$.0f"}
+                ]
+            }
+        };
+
+        var spec1 = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
       "title": {
+        "text": "Australian Music Industry & Festival Landscape (2023)",
         "fontSize": 24,
         "font": "sans-serif",
         "fontWeight": "bold",
@@ -44,10 +279,11 @@
               "width": 480,
               "height": 380,
               "title": {
-                "text": "Total Music Revenue by State",
+                "text": "1. Total Music Revenue by State",
                 "fontSize": 16,
+                "subtitle": "NSW and VIC dominate total revenue"
               },
-              "data": { "url": "music_revenue_by_state.csv" },
+              "data": { "url": "data/music_revenue_by_state.csv" },
               "transform": [
                 {"filter": "datum.per_capita_revenue >= revenue_filter"}
               ],
@@ -103,10 +339,11 @@
               "width": 480,
               "height": 380,
               "title": {
-                "text": "Per Capita Revenue",
+                "text": "2. Per Capita Revenue Tells a Different Story",
                 "fontSize": 16,
+                "subtitle": "Victoria leads in revenue per person"
               },
-              "data": { "url": "per_capita_revenue_vs_festivals.csv" },
+              "data": { "url": "data/per_capita_revenue_vs_festivals.csv" },
               "transform": [
                 {"filter": "datum.per_capita_revenue >= revenue_filter"}
               ],
@@ -162,7 +399,160 @@
       ]
     };
 
-    vegaEmbed("#vis1", spec1).catch(console.error);
+        var spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": "Festivals and Venues Infrastructure",
+            "width": 500,
+            "height": 300,
+            "data": {
+                "url": "data/infrastructure.csv"
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "state_full",
+                    "type": "nominal",
+                    "title": "State"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "title": "Count"
+                },
+                "color": {
+                    "field": "metric",
+                    "type": "nominal",
+                    "title": "Infrastructure Type",
+                    "scale": {"scheme": "set2"}
+                },
+                "xOffset": {"field": "metric"},
+                "tooltip": [
+                    {"field": "state_full", "type": "nominal", "title": "State"},
+                    {"field": "metric", "type": "nominal", "title": "Type"},
+                    {"field": "count", "type": "quantitative", "title": "Count"}
+                ]
+            }
+        };
+
+        
+
+        var spec4 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": "Music Genre Preferences",
+            "width": 300,
+            "height": 400,
+            "data": {
+                "url": "data/genre_preferences.csv"
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "state",
+                    "type": "nominal",
+                    "title": "State"
+                },
+                "y": {
+                    "field": "percentage",
+                    "type": "quantitative",
+                    "title": "Percentage (%)",
+                    "stack": "normalize"
+                },
+                "color": {
+                    "field": "genre",
+                    "type": "nominal",
+                    "title": "Genre",
+                    "scale": {"scheme": "tableau10"}
+                },
+                "tooltip": [
+                    {"field": "state", "type": "nominal", "title": "State"},
+                    {"field": "genre", "type": "nominal", "title": "Genre"},
+                    {"field": "percentage", "type": "quantitative", "title": "Percentage", "format": ".1f"}
+                ]
+            }
+        };
+
+        var spec5 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": "Monthly Listeners (Millions)",
+            "width": 300,
+            "height": 400,
+            "data": {
+                "url": "data/australian_artists.csv"
+            },
+            "mark": {"type": "bar", "cornerRadiusEnd": 4},
+            "encoding": {
+                "x": {
+                    "field": "monthly_listeners",
+                    "type": "quantitative",
+                    "title": "Monthly Listeners (M)"
+                },
+                "y": {
+                    "field": "artist",
+                    "type": "nominal",
+                    "title": "Artist",
+                    "sort": "-x"
+                },
+                "color": {
+                    "field": "genre",
+                    "type": "nominal",
+                    "title": "Genre",
+                    "scale": {"scheme": "tableau10"}
+                },
+                "tooltip": [
+                    {"field": "artist", "type": "nominal", "title": "Artist"},
+                    {"field": "genre", "type": "nominal", "title": "Genre"},
+                    {"field": "monthly_listeners", "type": "quantitative", "title": "Monthly Listeners (M)"},
+                    {"field": "aria_awards", "type": "quantitative", "title": "ARIA Awards"}
+                ]
+            }
+        };
+
+       
+
+        var spec7 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": "Revenue Per Capita",
+            "width": 500,
+            "height": 400,
+            "data": {
+                "url": "data/music_revenue_by_state.csv"
+            },
+            "mark": {"type": "bar", "cornerRadiusEnd": 4},
+            "encoding": {
+                "x": {
+                    "field": "per_capita_revenue",
+                    "type": "quantitative",
+                    "title": "Per Capita Revenue ($)"
+                },
+                "y": {
+                    "field": "state_full",
+                    "type": "nominal",
+                    "title": "State",
+                    "sort": "-x"
+                },
+                "color": {
+                    "field": "per_capita_revenue",
+                    "type": "quantitative",
+                    "scale": {"scheme": "viridis"},
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "state_full", "type": "nominal", "title": "State"},
+                    {"field": "per_capita_revenue", "type": "quantitative", "title": "Per Capita Revenue", "format": "$,.2f"},
+                    {"field": "total_revenue", "type": "quantitative", "title": "Total Revenue", "format": "$,.0f"},
+                    {"field": "festivals", "type": "quantitative", "title": "Festivals"},
+                    {"field": "venues", "type": "quantitative", "title": "Venues"}
+                ]
+            }
+        };
+
+        vegaEmbed("#visMap", specMap).catch(console.error);
+        vegaEmbed("#vis1", spec1).catch(console.error);
+        vegaEmbed("#vis2", spec2).catch(console.error);
+        vegaEmbed("#vis4", spec4).catch(console.error);
+        vegaEmbed("#vis5", spec5).catch(console.error);
+        vegaEmbed("#vis6", spec6).catch(console.error);
+        vegaEmbed("#vis7", spec7).catch(console.error);
     </script>
 </body>
 </html>

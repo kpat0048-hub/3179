@@ -4,19 +4,17 @@
   "width": 800,
   "height": 500,
   "projection": {
-    "type": "mercator",
-    "center": [133, -27],
-    "scale": 700
+    "type": "mercator"
   },
   "data": {
-    "url": "australia-states.topojson",
+    "url": "data/australia-states.topojson",
     "format": {"type": "topojson", "feature": "ne_10m_admin_1_states_provinces"}
   },
   "transform": [
     {
       "lookup": "properties.name",
       "from": {
-        "data": {"url": "revenue-per-capita.csv"},
+        "data": {"url": "data/revenue-per-capita.csv"},
         "key": "state_name",
         "fields": ["revenue_per_capita"]
       }
@@ -39,5 +37,4 @@
       {"field": "revenue_per_capita", "type": "quantitative", "format": "$.0f"}
     ]
   }
-
 }
