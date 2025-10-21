@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-    <title>Australian Music Festival Landscape</title>
+    <title>Australian Music Festivals</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -123,56 +123,76 @@
     </style>
 </head>
 <body>
-    <h1>🎵 Festivals of Australia 🎵</h1>
+    <h1>🎵 Sounds of Australia 🎵</h1>
     <p class="subtitle">A Journey Through the Nation's Music Festival Culture</p>
     
     <div class="narrative full-width">
-        <h2></h2>
-        <p>Australia's music festival scene is <span class="highlight">more than just entertainment</span>—it's actually a huge money-maker for the country.</p>
-        <p>Every year, hundreds of thousands of Aussies pack their bags and travel to festivals all over the country. You've got everything from thumping EDM beats to screaming rock guitars to smooth R&B vibes. Whatever you're into, there's a festival for you.</p>
-        <p class="quote">"Music festivals are the heartbeat of Australian culture, where strangers become friends and memories are made under the stars."</p>
-    </div>
+  <h2>Introduction</h2>
+  <p>Australia’s music festival industry plays an important role in the cultural and economic landscape of the country. Music events attract large audiences, support local businesses, and provide opportunities for artists, venues, and communities.</p>
+  
+  <p>This visualisation presents data on <strong>music revenue, festival activity, and infrastructure</strong> across Australian states and territories. It highlights regional differences in music-related economic activity and shows how cultural events contribute to local economies.</p>
+  
+  <p>Through the interactive map and charts, users can:
+    <ul>
+      <li>Explore total and per capita music revenue by state.</li>
+      <li>Compare the number of festivals and venue infrastructure across regions.</li>
+      <li>Identify patterns and relationships between revenue, population, and event activity.</li>
+    </ul>
+  </p>
+  
+  <p>The goal of this visualisation is to provide a clear overview of how the music and festival sector is distributed across Australia, supporting better understanding of its economic and cultural impact.</p>
+</div>
 
-    <div class="horizontal-section text-vis">
-        <div class="narrative">
-            <h2>The Geographic Melody</h2>
-            <p>Here's something interesting: music money doesn't spread evenly across Australia. <span class="highlight">The Northern Territory leads in per capita revenue</span>, but the big states like Victoria and NSW bring in the most cash overall because they've got way more people.</p>
-            <p>This map shows how location, population size, and music venues all come together to create Australia's unique music scene. Each state adds its own flavor to the mix.</p>
-        </div>
-        <div class="vis-container">
-            <div class="vis-title">Live Performance Revenue Per Capita by State</div>
-            <div id="visMap"></div>
-        </div>
-    </div>
 
-    <div class="horizontal-section text-vis">
-        <div class="narrative">
-            <h2>The Festival Landscape</h2>
-            <p><span class="highlight">Victoria and New South Wales lead the charge</span> when it comes to hosting festivals. But here's the cool part—these events don't just sell tickets. They boost local hotels, restaurants, and shops too.</p>
-            <p>States that have more festivals and better venues tend to make more money per person from music. It's all connected.</p>
-        </div>
-        <div class="vis-container">
-            <div class="vis-title">Festival Distribution & Revenue Impact</div>
-            <div id="vis1"></div>
-        </div>
-    </div>
+    <div class="vertical-section text-vis">
+  <div class="narrative">
+    <h2>Geographic Overview</h2>
+    <p>Australia’s music economy varies significantly between states and territories.</p>
+    <p>This map highlights how location, population, and cultural infrastructure contribute to different levels of music-related economic activity across the country.</p>
+    <p>By exploring the map, users can see how festival activity and revenue are distributed geographically, revealing key differences between urban centres and regional areas.</p>
+  </div>
+  <div class="vis-container">
+    <div class="vis-title">Live Performance Revenue Per Capita by State</div>
+    <div id="visMap"></div>
+  </div>
+</div>
 
-    <div class="horizontal-section vis-text">
-        <div class="vis-container">
-            <div class="vis-title">Music Infrastructure by State</div>
-            <div id="vis2"></div>
-        </div>
-        <div class="narrative">
-            <h2>Building the Stage</h2>
-            <p>Every great festival needs the right setup—venues, stages, sound systems, the works.</p>
-            <p><span class="highlight">States that invest in music infrastructure reap the rewards</span> in both awesome concerts and cold hard cash. The numbers prove it: more venues equals better festivals.</p>
-        </div>
-    </div>
+    <br>
+    <br>
+   <div class="vertical-section text-vis">
+  <div class="narrative">
+    <h2>Festival Landscape</h2>
+    <p><span class="highlight">Victoria and New South Wales host the majority of music festivals in Australia</span>, reflecting their larger populations and well-developed event infrastructure.</p>
+    <p>Music festivals contribute to local economies by increasing demand for services such as accommodation, food, and transport. They generate employment opportunities and stimulate spending in both urban and regional communities.</p>
+    <p>This visualisation shows the relationship between festival activity and music revenue. States with more developed festival infrastructure tend to record higher levels of per capita music revenue.</p>
+  </div>
+  <div class="vis-container">
+    <div class="vis-title">Festival Distribution & Revenue Impact</div>
+    <div id="vis1"></div>
+  </div>
+</div>
 
-    <div class="narrative full-width">
-        <h2>A Decade of Growth: The Festival Boom</h2>
-        <p>Since 2014, Australia's festival scene has absolutely exploded. What used to be just a few big events is now basically a year-round party. <span class="highlight">The festival boom isn't slowing down</span>—if anything, it's getting bigger and better every year.</p>
-    </div>
+    <br>
+
+   <div class="horizontal-section vis-text">
+  <div class="vis-container">
+    <div class="vis-title">Music Infrastructure by State</div>
+    <div id="vis2"></div>
+  </div>
+  <div class="narrative">
+    <h2>Music Infrastructure</h2>
+    <p>Music festivals and live events depend on the availability of suitable venues, stages, and supporting infrastructure. These facilities enable a wide range of performances, from small local gatherings to large-scale festivals.</p>
+    <p><span class="highlight">States with stronger infrastructure tend to support more events and attract larger audiences</span>. Investments in venues and event facilities are linked to both higher cultural participation and increased economic activity.</p>
+    <p>This visualisation shows the distribution of music infrastructure across Australian states, highlighting the connection between venue capacity, event opportunities, and economic outcomes.</p>
+  </div>
+</div>
+
+<div class="narrative full-width">
+  <h2>Growth over the years</h2>
+  <p>Since 2014, Australia’s music festival sector has experienced consistent and significant growth. A small number of events have expanded into a nationwide calendar that spans the entire year. <span class="highlight">The increase in festivals shows sustained demand and continued investment in live music events.</span></p>
+  <p>This growth has been supported by the participation of both international and local artists, helping to strengthen the country’s cultural presence and industry capacity. The expansion of the festival circuit reflects how music has become an important part of Australia’s creative economy and cultural identity.</p>
+</div>
+
 
     <div class="horizontal-section">
         <div class="vis-container">
@@ -185,29 +205,32 @@
         </div>
     </div>
 
-
-    <div class="narrative full-width">
-        <h2>The Final Encore: A Bright Future</h2>
-        <p>Looking ahead, one thing's crystal clear: <span class="highlight">Australia's music festival culture is here to stay</span>. The data tells us this scene is thriving and constantly evolving.</p>
-        <p>From the festivals that bring thousands together, to the venues that host them, to the artists who blow our minds, to the local businesses that benefit—music is just part of what makes Australia, Australia.</p>
-        <p class="quote">"In the end, it's not just about the music—it's about the moments, the memories, and the magic that happens when thousands of people come together to celebrate the universal language of sound."</p>
-        
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Music Festivals</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">8</div>
-                <div class="stat-label">States & Territories</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Music Genres</div>
-            </div>
-        </div>
+    <div class="vis-container full-width">
+        <div class="vis-title">Artist Success: ARIA Awards vs Billboard Peak Position</div>
+        <div id="vis6"></div>
     </div>
 
+    <div class="horizontal-section vis-text">
+        <div class="vis-container">
+            <div class="vis-title">Music Revenue Per Capita by State</div>
+            <div id="vis7"></div>
+        </div>
+       <div class="narrative">
+        <h2>Economic Impact</h2>
+        <p>The music industry plays a significant role in Australia’s economy. <span class="highlight">It generates millions of dollars in revenue</span> each year and supports a wide range of sectors, including employment, tourism, and local businesses.</p>
+        <p>The economic contribution of festivals and live music extends beyond ticket sales. It includes spending on accommodation, food services, transport, production, and other related industries, creating a multiplier effect within local and regional economies.</p>
+        <p>This connection between cultural activity and economic outcomes highlights the importance of the music sector as both a creative and financial driver.</p>
+        </div>
+
+    </div>
+
+   <div class="narrative full-width">
+  <h2>The Future Outlook</h2>
+  <p>Looking ahead, <span class="highlight">Australia’s music festival sector is expected to continue growing and evolving</span>. The data reflects a dynamic ecosystem that adapts to new trends and opportunities.</p>
+  <p>The combination of festivals, supporting infrastructure, artists, and economic contributions highlights the important role music plays across Australia.</p>
+  <p>As new genres develop and audiences expand, the live music scene will remain an important part of Australia’s cultural and economic landscape.</p>
+  
+</div>
     <script>
         var specMap = {
              "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -252,7 +275,6 @@
         var spec1 = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
       "title": {
-        "text": "Australian Music Industry & Festival Landscape (2023)",
         "fontSize": 24,
         "font": "sans-serif",
         "fontWeight": "bold",
@@ -281,7 +303,6 @@
               "title": {
                 "text": "1. Total Music Revenue by State",
                 "fontSize": 16,
-                "subtitle": "NSW and VIC dominate total revenue"
               },
               "data": { "url": "music_revenue_by_state.csv" },
               "transform": [
@@ -341,7 +362,6 @@
               "title": {
                 "text": "2. Per Capita Revenue Tells a Different Story",
                 "fontSize": 16,
-                "subtitle": "Victoria leads in revenue per person"
               },
               "data": { "url": "per_capita_revenue_vs_festivals.csv" },
               "transform": [
@@ -434,7 +454,40 @@
             }
         };
 
-        
+        var spec3 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": "Evolution of Festival Landscape (2014-Present)",
+            "width": 1200,
+            "height": 300,
+            "data": {
+                "url": "festival_landscape.csv"
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "Year"
+                },
+                "y": {  
+                    "aggregate": "count",
+                    "type": "quantitative",
+                    "title": "Number of Festivals",
+                    "stack": "center"
+                },
+                "color": {
+                    "field": "state",
+                    "type": "nominal",
+                    "title": "State",
+                    "scale": {"scheme": "category10"}
+                },
+                "tooltip": [
+                    {"field": "state", "type": "nominal", "title": "State"},
+                    {"field": "year", "type": "ordinal", "title": "Year"},
+                    {"aggregate": "count", "type": "quantitative", "title": "Festivals"}
+                ]
+            }
+        };
 
         var spec4 = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -507,7 +560,48 @@
             }
         };
 
-       
+        var spec6 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": "Artist Success: ARIA Awards vs Billboard Peak Position",
+            "width": 1200,
+            "height": 400,
+            "data": {
+                "url": "australian_artists.csv"
+            },
+            "mark": {"type": "circle", "size": 200},
+            "encoding": {
+                "x": {
+                    "field": "aria_awards",
+                    "type": "quantitative",
+                    "title": "ARIA Awards Won"
+                },
+                "y": {
+                    "field": "peak_billboard",
+                    "type": "quantitative",
+                    "title": "Peak Billboard Position",
+                    "scale": {"reverse": true}
+                },
+                "color": {
+                    "field": "genre",
+                    "type": "nominal",
+                    "title": "Genre",
+                    "scale": {"scheme": "tableau10"}
+                },
+                "size": {
+                    "field": "monthly_listeners",
+                    "type": "quantitative",
+                    "title": "Monthly Listeners (M)",
+                    "scale": {"range": [100, 1000]}
+                },
+                "tooltip": [
+                    {"field": "artist", "type": "nominal", "title": "Artist"},
+                    {"field": "genre", "type": "nominal", "title": "Genre"},
+                    {"field": "aria_awards", "type": "quantitative", "title": "ARIA Awards"},
+                    {"field": "peak_billboard", "type": "quantitative", "title": "Billboard Peak"},
+                    {"field": "monthly_listeners", "type": "quantitative", "title": "Monthly Listeners (M)"}
+                ]
+            }
+        };
 
         var spec7 = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -556,5 +650,9 @@
     </script>
 </body>
 
-</html>
+<footer style="padding: 20px; background-color: #f4f4f4; text-align: center; font-size: 14px; color: #555;">
+  <p>Data Sources: <a href="https://reports.liveperformance.com.au/ticket-survey-2023/index.html#/" target="_blank" rel="noopener">Live Performance Australia (LPA)</a>, <a href="https://www.abs.gov.au/" target="_blank" rel="noopener">ABS Tourism Stats</a>, <a href="https://www.aria.com.au/" target="_blank" rel="noopener">ARIA Artist Stats</a></p>
+  <p>Kirtan Patel (33104832) 21/10/25</p>
+</footer>
 
+</html>
